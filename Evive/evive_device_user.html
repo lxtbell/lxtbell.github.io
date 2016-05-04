@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Device User - Evive</title>
+    <meta name="description" content="Device User - Evive">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flat-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/evive-device.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="container">
+    <div id="mainNavigation"></div>
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-8 col-xs-12 text-right buttom-vertical">
+                <small>Or want to check <a href="otheroptions.html">Other Options</a>?</small>
+            </div>
+        </div>
+        <div id="eviveNavigation"></div>
+        <hr class="hr-small"/>
+        <div class="row" id="textTipsGroup">
+            <div class="col-xs-10">
+                <div class="row">
+                    <h6 id="textTips">Please sign in or register so that you can manage your listing later</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row row-flex">
+            <div class="col-xs-4">
+                <div class="row login-form invis" data-type="accountColumn" id="loginForm">
+                    <div class="form-group" id="loginUsernameGroup">
+                        <input type="text" class="form-control login-field" value="" placeholder="Enter your Username" id="loginUsername">
+                    </div>
+                    <div class="form-group" id="loginPasswordGroup">
+                        <input type="password" class="form-control login-field" value="" placeholder="Password" id="loginPassword">
+                    </div>
+                    <a class="btn btn-primary btn-lg btn-block" id="loginSubmit">Log in</a>
+                    <a class="login-link" id="loginLostPassword" href="#">Lost your password?</a>
+                </div>
+                <div class="row login-form invis" data-type="accountColumn" id="contactForm">
+                    <div class="form-group">
+                        <p>
+                            <small>Email</small><br/>
+                            <span data-type="Email">&nbsp;</span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-danger btn-lg btn-block" name="loginLogout">Log out</a>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <small>Contact Information</small>
+                        </p>
+                        <input type="text" class="form-control login-field" value="" placeholder="Nickname" id="contactNickname" title="Nickname">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control login-field" value="" placeholder="Mobile phone number" id="contactMobile" title="Mobile">
+                    </div>
+                    <a class="btn btn-primary btn-lg btn-block" id="contactSubmit">Submit Listing</a>
+                </div>
+                <div class="row login-form invis" data-type="accountColumn" id="accountInfo">
+                    <div class="form-group">
+                        <p>
+                            <small>Email</small><br/>
+                            <span data-type="Email">&nbsp;</span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <small>Nickname</small><br/>
+                            <span data-type="Nickname">&nbsp;</span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <small>Mobile phone number</small><br/>
+                            <span data-type="Mobile">&nbsp;</span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <a href="myaccount.html" class="btn btn-info btn-lg btn-block" id="accountGoto">Goto My Account</a>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-danger btn-lg btn-block" name="loginLogout">Log out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <p>
+                    <small>Device</small><br/>
+                    <span class="text-placeholder" id="deviceFullName">&nbsp;</span><br/>
+                    <br/>
+                    <small>Condition<br/></small>
+                    <span class="text-placeholder" id="deviceConditionText">&nbsp;</span><br/>
+                    <br/>
+                    <small>Additional Note<br/></small>
+                    <span class="text-placeholder" id="deviceConditionNote">&nbsp;</span><br/>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script>window.jQuery || document.write('<script src="js/jquery-2.2.3.min.js"><\/script>')</script>
+<script src="js/flat-ui.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/evive.js"></script>
+<script src="js/evive-device.js"></script>
+<script src="js/DummyLoginUtil.js"></script>
+
+<script>
+    var DummyLoginUtil = new DummyLoginUtil();
+
+    loadEviveNavigation("deviceUser");
+
+    setVisual('');
+    setEvents();
+
+    function setVisual(stage) {
+        var deviceDesc = getDeviceDesc();
+        $("#deviceFullName").text(deviceDesc.name);
+        $("#deviceConditionText").text(deviceDesc.condition);
+        $("#deviceConditionNote").text(deviceDesc.conditionNote);
+
+        $("[data-type='accountColumn']").hide();
+
+        if (!DummyLoginUtil.currentUser()) {
+            $("#loginForm").show();
+            return;
+        }
+
+        var userInfo = DummyLoginUtil.requestUserInfo();
+        var $textTips = $("#textTips");
+        $("[data-type='Email']").text(userInfo.email);
+        if (stage != 'accountInfo') {
+            $textTips.text("And finally, please check your contact information");
+            $("#contactNickname").val(userInfo.nickname);
+            $("#contactMobile").val(userInfo.mobile);
+            $("#contactForm").show();
+            return;
+        }
+
+        $textTips.text("Your have successfully posted a listing on Evive!");
+        $("[data-type='Nickname']").text(userInfo.nickname);
+        $("[data-type='Mobile']").text(userInfo.mobile);
+        $("#accountInfo").show();
+    }
+
+    function setEvents() {
+        $("#loginSubmit").click(function() {
+            var username = $("#loginUsername").val();
+            var password = $("#loginPassword").val();
+            if (DummyLoginUtil.validateUser(username, password)) {
+                setVisual('');
+            }
+            else {
+                var $loginUsernameGroup = $("#loginUsernameGroup");
+                var $loginPasswordGroup = $("#loginPasswordGroup");
+                $loginUsernameGroup.addClass("has-error");
+                $loginPasswordGroup.addClass("has-error");
+                $loginUsernameGroup.effect("shake");
+                $loginPasswordGroup.effect("shake");
+            }
+        });
+
+        $("#loginLostPassword").click(function() {
+            var user = DummyLoginUtil.resetUserInfo();
+            $("#loginUsername").val(user.username);
+            $("#loginPassword").val(user.password);
+        });
+
+        $("[name='loginLogout']").click(function() {
+            DummyLoginUtil.logOutUser();
+            setVisual('');
+        })
+
+        $("#contactSubmit").click(function() {
+            var userInfo = DummyLoginUtil.requestUserInfo();;
+            userInfo.nickname = $("#contactNickname").val();
+            userInfo.mobile = $("#contactMobile").val();
+            DummyLoginUtil.updateUserInfo(userInfo);
+
+            localStorage.deviceSubmitted = $.now();
+
+            loadEviveNavigation("deviceDone");
+            setVisual('accountInfo');
+        });
+    }
+</script>
+</html>
+

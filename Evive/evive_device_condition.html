@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Device Condition - Evive</title>
+    <meta name="description" content="Device Condition - Evive">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flat-ui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/evive-device.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="container">
+    <div id="mainNavigation"></div>
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-8 col-xs-12 text-right buttom-vertical">
+                <small>Or want to check <a href="otheroptions.html">Other Options</a>?</small>
+            </div>
+        </div>
+        <div id="eviveNavigation"></div>
+        <hr class="hr-small"/>
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="row">
+                    <h6>The device condition is</h6>
+                </div>
+                <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                    <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div class="row container-img-padded">
+                            <img class="img-responsive center-block svg" src="img/layout/device-new.svg" />
+                        </div>
+                        <div class="row text-center">
+                            <small>Like New</small>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-3">
+                        <div class="row container-img-padded">
+                            <img class="img-responsive center-block svg" src="img/layout/device-old.svg"/>
+                        </div>
+                        <div class="row text-center">
+                            <small>Used</small>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-3">
+                        <div class="row container-img-padded">
+                            <img class="img-responsive center-block svg" src="img/layout/device-break.svg"/>
+                        </div>
+                        <div class="row text-center">
+                            <small>Broken</small>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr-small"/>
+                <div class="row">
+                    <h6>Additional Note (Optional)</h6>
+                </div>
+                <div class="row row-flex">
+                    <!--<div class="form-group">-->
+                        <div class="col-md-9 col-xs-12">
+                            <textarea class="form-control" placeholder="The defects of the device, etc." rows="8" id="deviceConditionNote">Used for three days before iPhone 7 came out.
+No defects.</textarea>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <a href="#" class="btn btn-block btn-lg btn-primary vertical-bottom" id="deviceConditionSubmit">Next</a>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script>window.jQuery || document.write('<script src="js/jquery-2.2.3.min.js"><\/script>')</script>
+<script src="js/flat-ui.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/evive.js"></script>
+<script src="js/evive-device.js"></script>
+
+<script>
+    loadEviveNavigation("deviceCondition");
+
+    setElements();
+
+    function setElements() {
+        (function ($) {
+            var MIN_VALUE = 1;
+            var MAX_VALUE = 7;
+            var DEFAULT_VALUE = 4;
+
+            // Add segments to a slider
+            $.fn.addSliderSegments = function (amount, orientation) {
+                return this.each(function () {
+                    if (orientation === 'vertical') {
+                        var output = '';
+                        var i;
+                        for (i = 1; i <= amount - 2; i++) {
+                            output += '<div class="ui-slider-segment" style="top:' + 100 / (amount - 1) * i + '%;"></div>';
+                        }
+                        $(this).prepend(output);
+                    } else {
+                        var segmentGap = 100 / (amount - 1) + '%';
+                        var segment = '<div class="ui-slider-segment" style="margin-left: ' + segmentGap + ';"></div>';
+                        $(this).prepend(segment.repeat(amount - 2));
+                    }
+                });
+            };
+
+            $(function () {
+
+                // jQuery UI Sliders
+                var $slider = $('#slider');
+                if ($slider.length > 0) {
+                    $slider.slider({
+                        min: MIN_VALUE,
+                        max: MAX_VALUE,
+                        value: DEFAULT_VALUE,
+                        orientation: 'horizontal',
+                        range: 'min',
+                        create: function(event, ui) {
+                            if (!localStorage.deviceCondition) return;
+                            $(this).slider('value', localStorage.deviceCondition);
+                        }
+                    }).addSliderSegments($slider.slider('option').max);
+                }
+
+                var $verticalSlider = $('#vertical-slider');
+                if ($verticalSlider.length) {
+                    $verticalSlider.slider({
+                        min: MIN_VALUE,
+                        max: MAX_VALUE,
+                        value: DEFAULT_VALUE,
+                        orientation: 'vertical',
+                        range: 'min'
+                    }).addSliderSegments($verticalSlider.slider('option').max, 'vertical');
+                }
+
+                // make code pretty
+                window.prettyPrint && prettyPrint();
+
+            });
+
+        })(jQuery);
+
+        $("#deviceConditionSubmit").click(function () {
+            localStorage.deviceCondition = $('#slider').slider("option", "value");
+            localStorage.deviceConditionNote = $("#deviceConditionNote").val();
+            goto("evive_device_location.html");
+        });
+
+        if (!localStorage.deviceCondition) return;
+        $("#deviceConditionNote").val(localStorage.deviceConditionNote);
+    }
+</script>
+</body>
+</html>
+

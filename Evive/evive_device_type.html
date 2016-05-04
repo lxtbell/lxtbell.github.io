@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Device Type - Evive</title>
+    <meta name="description" content="Device Type - Evive">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flat-ui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/evive-device.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="container">
+    <div id="mainNavigation"></div>
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="invis" id="deviceType">
+            <div class="row">
+                <div class="col-md-8 col-xs-12 no-padding">
+                    <h6>I want to Evive a</h6>
+                </div>
+                <div class="col-md-4 col-xs-12 text-right buttom-vertical">
+                    <small>Or want to check <a href="otheroptions.html" onclick="clearStorage();">Other Options</a>?</small>
+                </div>
+            </div>
+            <div class="row container-option">
+                <a href="#" class="button-icon" name="deviceTypes" id="deviceTypeSmartphone" data-text="Smartphone", data-image="img/devices/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceTypes" id="deviceTypeTablet" data-text="Tablet", data-image="img/devices/tablet.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/tablet.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceTypes" id="deviceTypeDesktop" data-text="Desktop", data-image="img/devices/computer.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/computer.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceTypes" id="deviceTypeLaptop" data-text="Laptop", data-image="img/devices/laptop.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/laptop.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceTypes" id="deviceTypeSmartwatch" data-text="Smartwatch", data-image="img/devices/smartwatch.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartwatch.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+            </div>
+        </div>
+        <div class="invis" id="deviceBrand">
+            <hr class="hr-small"/>
+            <div class="row">
+                <h6>What is its brand?</h6>
+            </div>
+            <div class="row container-option">
+                <a href="#" class="button-icon" name="deviceBrands" id="deviceBrandApple" data-text="Apple" data-image="img/brands/apple.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/brands/apple.svg"/>
+                    </div></div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceBrands" id="deviceBrandSamsung" data-text="Samsung" data-image="img/brands/samsung.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/brands/samsung.svg"/>
+                    </div></div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceBrands" id="deviceBrandLG" data-text="LG" data-image="img/brands/lg.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/brands/lg.svg"/>
+                    </div></div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceBrands" id="deviceBrandMotorola" data-text="Motorola" data-image="img/brands/motorola.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/brands/motorola.svg"/>
+                    </div></div>
+                </div></a>
+                <a href="#" class="button-icon button-icon-disabled" name="deviceBrands" id="deviceBrandHTC" data-text="HTC" data-image="image: img/brands/htc.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/brands/htc.svg"/>
+                    </div></div>
+                </div></a>
+            </div>
+        </div>
+        <div class="invis" id="deviceModel">
+            <hr class="hr-small"/>
+            <div class="row">
+                <h6>And the device model is</h6>
+            </div>
+            <div class="row container-option">
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModeliPhone6S" data-brand="Apple" data-text="iPhone 6S" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModeliPhone6" data-brand="Apple" data-text="iPhone 6" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModeliPhone5S" data-brand="Apple" data-text="iPhone 5S" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModeliPhone5" data-brand="Apple" data-text="iPhone 5" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModelGalaxyS7" data-brand="Samsung" data-text="Galaxy S7" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModelGalaxyS6" data-brand="Samsung" data-text="Galaxy S6" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+                <a href="#" class="button-icon" name="deviceModels" id="deviceModelGalaxyS5" data-brand="Samsung" data-text="Galaxy S5" data-image="image: img/brands/smartphone.svg"><div class="col-sm-2 col-xs-3">
+                    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+                        <img class="img-responsive center-block svg" src="img/devices/smartphone.svg"/>
+                    </div></div>
+                    <div class="row text-center">
+                        <small></small>
+                    </div>
+                </div></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script>window.jQuery || document.write('<script src="js/jquery-2.2.3.min.js"><\/script>')</script>
+<script src="js/flat-ui.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/evive.js"></script>
+<script src="js/evive-device.js"></script>
+
+<script>
+    var eviveType = getUrlParameter('eviveType');
+    if (eviveType)
+        localStorage.eviveType = eviveType;
+
+    var clear = getUrlParameter('clear');
+    if (clear == 'yes') {
+        localStorage.removeItem("deviceTypeObj");
+        localStorage.removeItem("deviceBrandObj");
+        localStorage.removeItem("deviceModelObj");
+        if (eviveType == "give") localStorage.removeItem("deviceSubmitted");
+    }
+
+    setVisual();
+    setEvents();
+
+    function setVisual() {
+        loadInlineSvg();
+
+        var $deviceTypes = $("[name='deviceTypes']");
+        var $deviceBrands = $("[name='deviceBrands']");
+        var $deviceModels = $("[name='deviceModels']");
+        var $deviceType = $("#deviceType");
+        var $deviceBrand = $("#deviceBrand");
+        var $deviceModel = $("#deviceModel");
+
+        $deviceTypes.each(function(index) { $(this).find("small").text(this.dataset.text); });
+        $deviceModels.each(function(index) { $(this).find("small").text(this.dataset.text); });
+
+        $deviceType.hide();
+        $deviceBrand.hide();
+        $deviceModel.hide();
+
+        $deviceTypes.removeClass("button-icon-selected");
+        $deviceType.show();
+        if (!localStorage.deviceTypeObj) return;
+        $("#" + JSON.parse(localStorage.deviceTypeObj).id).addClass("button-icon-selected");
+
+        $deviceBrands.removeClass("button-icon-selected");
+        $deviceBrand.show();
+        if (!localStorage.deviceBrandObj) return;
+        $("#" + JSON.parse(localStorage.deviceBrandObj).id).addClass("button-icon-selected");
+
+        $deviceModels.hide();
+        $deviceModels.removeClass("button-icon-selected");
+
+        $deviceModel.find("[data-brand='" + JSON.parse(localStorage.deviceBrandObj).text + "']").show();
+        $deviceModel.show();
+        if (!localStorage.deviceModelObj) return;
+        $("#" + JSON.parse(localStorage.deviceModelObj).id).addClass("button-icon-selected");
+    }
+
+    function setEvents() {
+        $("[name='deviceTypes']").click(function () {
+            localStorage.deviceTypeObj = JSON.stringify({ "id": this.id, "text": this.dataset.text, "image": this.dataset.image });
+            localStorage.removeItem("deviceBrandObj");
+            localStorage.removeItem("deviceModelObj");
+            setVisual();
+        });
+
+        $("[name='deviceBrands']").click(function () {
+            localStorage.deviceBrandObj = JSON.stringify({ "id": this.id, "text": this.dataset.text, "image": this.dataset.image });
+            localStorage.removeItem("deviceModelObj");
+            setVisual();
+        });
+
+        $("[name='deviceModels']").click(function () {
+            localStorage.deviceModelObj = JSON.stringify({ "id": this.id, "text": this.dataset.text, "image": this.dataset.image });
+            if (localStorage.eviveType != "get")
+                goto("evive_device_condition.html");
+            else
+                goto("evive_device_listing.html");
+        });
+    }
+</script>
+
+</body>
+</html>
+

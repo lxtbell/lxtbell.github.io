@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Account - Evive</title>
+    <meta name="description" content="My Account - Evive">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flat-ui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/myaccount.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body class = "">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class = "container">
+    <div id="mainNavigation"></div>
+
+    <div class = "container-fluid">
+        <div class="col-md-4 profile-pic">
+            <img src="img/profile_icon.png" width="200px" height = "200px">
+        </div>
+        <div class = "col-md-8 user-info">
+            <h4>Welcome Back, <span id = "my-acc-user-name"></span></h4>
+            <h6>Email: <span id = "my-acc-user-email"></span></h6>
+            <a href="#" id = "log-out-btn" class="btn btn-block btn-lg btn-danger">Log Out</a>
+        </div>
+    </div>
+    <div class = "container-fluid num-listing">
+        <p class = "list-text">You have <span id = "my-acc-num-list">1</span> active listing</p>
+    </div>
+    <div id = "first-listing" class = "container-fluid container-listing">
+        <div class="col-md-3 device-icon">
+            <img src = "img/devices/smartphone.svg" height = "100%">
+        </div>
+        <div class="col-md-6 device-info">
+            <p>Device Type: <span id = "listing-device-type">&nbsp;</span></p>
+            <p>Device Condition: <span id = "listing-device-condition">&nbsp;</span></p>
+            <p>Listing Status: <span id = "listing-status">Not Yet Sold</span></p>
+        </div>
+        <div class="col-md-3 device-button-group">
+            <a href="evive_device_type.html?eviveType=give" class="btn btn-block btn-lg btn-info">Edit Listing</a>
+            <a id = "cancel-listing" class="btn btn-block btn-lg btn-danger">Cancel Listing</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script>window.jQuery || document.write('<script src="js/jquery-2.2.3.min.js"><\/script>')</script>
+<script src="js/flat-ui.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/evive.js"></script>
+<script src="js/evive-device.js"></script>
+<script src="js/DummyLoginUtil.js"></script>
+<script src="js/myaccount.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+
+.profile-pic
+{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.user-info
+{
+    margin-top: 60px;
+}
+
+.num-listing
+{
+    margin-top: 30px;
+
+}
+
+.list-text
+{
+    display: block;
+    padding-top: 10px;
+    line-height: 1.3em;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.container-listing
+{
+    padding: 15px 15px 15px 15px;
+}
+
+.device-icon
+{
+    padding: 20px 20px 20px 20px;
+    height:200px;
+    border-right: 2px double #cecece;
+}
+
+.device-info
+{
+    padding-left: 30px;
+    border-right: 2px double #cecece;
+    height:200px;
+
+}
+
+.device-info > p
+{
+    display: block;
+    margin-top:23px;
+    font-size: 20px;
+}
+
+.device-button-group
+{
+    margin-top:50px;
+}
+#listing-device-type
+{
+    font-weight: 700;
+    color: #117a65;
+}
+
+#listing-device-condition{
+
+}
+
+#listing-status
+{
+    color: red;
+}
+#my-acc-num-list
+{
+    font-weight: 700;
+    color: #117a65;
+}
+
+#my-acc-user-name
+{
+
+}
+
+#my-acc-user-email
+{
+
+}
+
+#log-out-btn{
+    width: 400px;
+    margin-top: 10px;
+}
