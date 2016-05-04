@@ -1,7 +1,11 @@
 var DummyLoginUtil = new DummyLoginUtil();
 
-if (!DummyLoginUtil.currentUser())
+var curUser = DummyLoginUtil.currentUser();
+console.log(curUser);
+if (!curUser) {
+    console.log("Redirecting to login.html");
     window.location.href = "login.html";
+}
 
 setVisual();
 
