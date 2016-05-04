@@ -1,11 +1,7 @@
 var DummyLoginUtil = new DummyLoginUtil();
 
-var curUser = DummyLoginUtil.currentUser();
-console.log(curUser);
-if (!curUser) {
-    console.log("Redirecting to login.html");
+if (!DummyLoginUtil.currentUser())
     window.location.href = "login.html";
-}
 
 setVisual();
 
@@ -28,8 +24,9 @@ function setVisual() {
         window.location = "index.html";
     }
 
-    document.getElementById("my-acc-user-name").innerHTML = DummyLoginUtil.currentUser();
-    document.getElementById("my-acc-user-email").innerHTML = DummyLoginUtil.requestUserInfo().email;
+    var userInfo = DummyLoginUtil.requestUserInfo();
+    $("#my-acc-user-name").text(userInfo.nickname == "" ? DummyLoginUtil.currentUser() : userInfo.nickname);
+    $("#my-acc-user-email").text(userInfo.email);
 
     $("#cancel-listing").click(function() {
         if (confirm("Are you sure?") == true) {
