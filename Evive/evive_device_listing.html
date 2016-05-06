@@ -70,6 +70,13 @@
                 <a href="#" class="btn btn-block btn-lg btn-info" id="deviceContactOwner">Contact Owner</a>
             </div>
         </div>
+        <div class="row" data-type="contactInfo">
+            <div class="col-xs-10 col-xs-offset-2 tile contactInfo">
+                <h6>Owner: <span data-type="ownerNickname"></span></h6>
+                <h6>Owner's Email Address: <span data-type="ownerEmail"></span></h6>
+                <h6>Owner's Mobile Number: <span data-type="ownerMobile"></span></h6>
+            </div>
+        </div>
     </div>
 </div>
 </div>
@@ -80,11 +87,21 @@
 <script src="js/plugins.js"></script>
 <script src="js/evive.js"></script>
 <script src="js/evive-device.js"></script>
+<script src="js/DummyLoginUtil.js"></script>
 
 <script>
+    var DummyLoginUtil = new DummyLoginUtil();
+
     loadEviveNavigation("deviceListing");
 
     setVisual();
+
+    var $contactInfo =  $("[data-type='contactInfo']");
+    $contactInfo.hide();
+    $("#deviceContactOwner").click(function()
+    {
+        $contactInfo.slideToggle();
+    });
 
     function setVisual() {
         if (!localStorage.deviceSubmitted || getDeviceDesc().name != getDeviceGetName()) {
@@ -97,6 +114,11 @@
             $("[data-type='deviceFullName']").text(deviceDesc.name);
             $("[data-type='deviceCondition']").text(deviceDesc.condition);
             $("[data-type='deviceConditionNote']").text(deviceDesc.conditionNote);
+
+            var curUser = DummyLoginUtil.requestUserInfo(localStorage.deviceUser);
+            $("[data-type='ownerNickname']").text(curUser.nickname);
+            $("[data-type='ownerEmail']").text(curUser.email);
+            $("[data-type='ownerMobile']").text(curUser.mobile);
         }
     }
 </script>
