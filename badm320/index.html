@@ -5,37 +5,50 @@
     <title>Xiaotian Le Branding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/vendor/bootstrap/css/bootstrap-flatly.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/devicons/css/devicons.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+
+    <link rel="stylesheet" href="css/resume.min.css">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="page-top">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Xiaotian Le</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-lg-none d-block">Xiaotian Le</span>
+        <span class="d-lg-block d-none">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+            </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="self.html">What I Think of Myself</a></li>
-                <li class="nav-item"><a class="nav-link" href="external.html">What Others Think of Me</a></li>
-            </ul>
-        </div>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Me</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#self">What I Think of Myself</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#external">What Others Think of Me</a></li>
+        </ul>
     </div>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 offset-md-1 col-xs-12">
-            <div class="jumbotron">
-                <h1 class="display-3">Xiaotian Le</h1>
-                <p class="lead">
-                    I'm a senior Computer Science student with a Business minor,
-                    now studying in Hong Kong University of Science and Technology as an exchange student.
-                </p>
-            </div>
+<div class="container-fluid p-0">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+            <h1 class="mb-0">Xiaotian
+                <span class="text-primary">Le</span>
+            </h1>
+            <p class="mb-5">
+                I'm a senior Computer Science student with a Business minor,
+                now studying in Hong Kong University of Science and Technology as an exchange student.
+            </p>
 
             <h4>Features & Benefits</h4>
             <p>
@@ -48,15 +61,155 @@
 
             <p>
                 To find out more about me, just check
-                <a href="self.html">what I think of myself</a>, and
-                <a href="external.html">what others think of me</a>.
+                <a class="js-scroll-trigger" href="#self">what I think of myself</a>, and
+                <a class="js-scroll-trigger" href="#self">what others think of me</a>.
             </p>
         </div>
-    </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="self">
+        <div class="my-auto">
+            <h2>What I Think of Myself</h2>
+
+            <h3>Strength & Weakness</h3>
+            <p>
+                How can something be a strength and a weakness at the same time? You might ask. Well, it certainly can.
+            </p>
+
+            <div class="row">
+                <div class="col-md-3 col-xs-12 d-md-none d-block"><h4>Laziness</h4></div>
+                <div class="col-md-3 col-xs-12 d-md-block d-none"><h4 class="center">Laziness</h4></div>
+                <div class="col-md-9 col-xs-12">
+                    <span>
+                        I'm particularly reluctant to perform repetitive work,
+                        easily getting bored and not willing to continue after a while.
+                        Instead, I often look for ways to simplify or automate the work.
+                        That habit results in my creation of many methods and tools to free other people and myself from the labor.
+                        It also leads me to the Computer Science profession,
+                        with a particular interest in artificial intelligence.
+                        On the other hand, I sometimes perform inefficiently or procrastinate on monotonous work if it can't be automated with a reasonable amount of time and effort.
+                    </span>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-3 col-xs-12 d-md-none d-block"><h4>Perfectionism</h4></div>
+                <div class="col-md-9 col-xs-12">
+                    <span>
+                        Though often hidden, a perfectionist inside me sometimes calls out.
+                        As a result, occasionally I spend a significant amount of time tweaking some fine details of my work.
+                        Such work is often regarded as of very high quality.
+                        Meanwhile, the fine details don't often matter that much and I could have spent the precious time switching to another piece of work of greater importance.
+                    </span>
+                </div>
+                <div class="col-md-3 col-xs-12 d-md-block d-none"><h4 class="center">Perfectionism</h4></div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h3>Strength</h3>
+                    <h4>Curiosity</h4>
+                    <span>
+                        I always attempt to figure out how and why everything works.
+                        The curiosity is probably why I have a strong interest in science.
+                        When time permits I can keep surfing Wikipedia for several hours.
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h3>Weakness</h3>
+                    <h4>Sleepiness</h4>
+                    <span>
+                        Unlike many of others of the same age who can work well into late night and get up early,
+                        I always need a long and comforting sleep.
+                        I can't think as fast and accurately when I'm tired,
+                        and sometimes decide to return to the bed during the day.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="external">
+        <div class="my-auto">
+            <h2>What Others Think of Me</h2>
+
+            <span>
+                The strengths and weaknesses my friends point out largely overlap with what I perceive of myself.
+                Maybe the way I welcome feedback about myself from others helps me get a better understanding of myself.
+            </span>
+
+            <hr>
+
+            <h3>Strength</h3>
+
+            <h4>Optimism</h4>
+            <span>
+                As my name indicates, which contains "happiness" and "laughter" in Chinese,
+                I have a sanguine and optimistic personality and always perceive things from a bright side.
+                My friends are willing to approach me when they feel frustrated as I can always shed light on their problems and light up their mood.
+            </span>
+
+            <br>
+
+            <br>
+
+            <h4>Modesty</h4>
+            <span>
+                Friends agree that I'm open-minded.
+                They say that I'm willing to listen to and carefully consider all kind of opinions and advices,
+                including those opposing my approach or standpoint, and those pointing out my weaknesses and mistakes.
+            </span>
+
+            <hr>
+
+            <h3>Weakness</h3>
+
+            <h4>Forgetfulness</h4>
+            <span>
+                Friends quote my poor memory.
+                They claim that I can easily forget something that I was told three days ago,
+                or a person met last month.
+                Well, I guess I rely on my smartphone and computer storage too much.
+                They do sometimes get amazed by my memory of technical details, though.
+            </span>
+            <div class="row">
+                <div class="col-md-8 offset-md-4 col-xs-12">
+                    <blockquote class="blockquote float-right">
+                        <p class="mb-0">Oh man, you didn't remember it, do you?</p>
+                        <footer class="blockquote-footer float-right">Some friend every day</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <h4>Sleepiness</h4>
+                    <span>
+                        Friends told me that I look jaded and listless when I didn't sleep for long enough.
+                        That is certainly the case as I mentioned above about my personal weakness.
+                    </span>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <blockquote class="blockquote float-right">
+                        <p class="mb-0 text-right">You always look sleepy whenever we meet early in the morning</p>
+                        <footer class="blockquote-footer float-right">A friend</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
-<script src="js/vendor/jquery.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/resume.min.js"></script>
 <script src="js/custom.js"></script>
 </body>
 </html>
